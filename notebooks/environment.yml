@@ -1,0 +1,7 @@
+name: app_environment
+channels:
+  - snowflake
+dependencies:
+  - snowflake=*
+  - snowflake-snowpark-python=*
+  - snowflake-telemetry-python=*
