@@ -3,5 +3,5 @@ channels:
   - snowflake
 dependencies:
   - snowflake=*
+  - snowflake-ml-python=*
   - snowflake-snowpark-python=*
-  - snowflake-telemetry-python=*

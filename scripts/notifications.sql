@@ -18,10 +18,13 @@ create or replace notification integration kameshs_slack_demomate
   webhook_headers=('Content-Type'='application/json');
 
 -- send to channel 
-create or replace notification integration kameshs_slack_alerts_notifications
-  type = WEBHOOK
-  enabled = true
-  webhook_url = 'https://hooks.slack.com/services/SNOWFLAKE_WEBHOOK_SECRET'
-  webhook_secret = kamesh_demos.alerts_and_notification.slack_alerts_notifications_webhook
-  webhook_body_template='SNOWFLAKE_WEBHOOK_MESSAGE'
-  webhook_headers=('Content-Type'='application/json');
+CREATE OR REPLACE NOTIFICATION INTEGRATION kameshs_slack_alerts_notifications
+  TYPE = WEBHOOK
+  ENABLED = true
+  WEBHOOK_URL = 'https://hooks.slack.com/services/SNOWFLAKE_WEBHOOK_SECRET'
+  WEBHOOK_SECRET = alerts_and_notification.slack_alerts_notifications_webhook
+  WEBHOOK_BODY_TEMPLATE='SNOWFLAKE_WEBHOOK_MESSAGE'
+  WEBHOOK_HEADERS=('Content-Type'='application/json');
+
+-- view integrations
+show NOTIFICATION integrations;

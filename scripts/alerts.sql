@@ -69,3 +69,7 @@ CREATE OR REPLACE ALERT alerts_and_notification.truck_review_alert
             );
         END FOR;
     END;
+
+-- 
+
+show alerts in database kamesh_demos;
