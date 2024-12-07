@@ -1,5 +1,5 @@
 --!jinja
-USE ROLE {{current_role()}};
+USE ROLE {{demo_role}};
 
 /*--
 • database, schema and warehouse creation
