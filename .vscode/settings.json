@@ -1,0 +1,5 @@
+{
+    "sqlfluff.dialect": "snowflake",
+    "sqlfluff.linter.run": "onType",
+    "sqlfluff.config": "./.sqlfluff"
+}

@@ -1,0 +1,9 @@
+[sqlfluff]
+dialect = snowflake
+
+[sqlfluff:indentation]
+tab_space_size = 2
+
+[sqlfluff:rules:capitalisation.keywords]
+capitalisation_policy = lower
+ignore_keywords = create, replace, alert, grant, execute,alert

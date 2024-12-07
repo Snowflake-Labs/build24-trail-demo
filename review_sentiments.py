@@ -17,6 +17,7 @@ __data_schema = "data"
 __stages_schema = "stages"
 __src_schema = "src"
 __task_schema = "tasks"
+__alerts_schema = "alerts_and_notification"
 __warehouse = "tasty_ds_wh"
 
 # %%
@@ -28,7 +29,7 @@ root = Root(session)
 
 # %%
 ## Create Schemas
-__schemas = [__data_schema, __stages_schema, __src_schema,__task_schema]
+__schemas = [__data_schema, __stages_schema, __src_schema,__task_schema,__alerts_schema]
 for s in __schemas:
     _schema = Schema(s)
     root.databases[__database].schemas[s].create_or_alter(_schema)
@@ -47,7 +48,6 @@ _ = (
         mode=CreateMode.if_not_exists,
     )
 )
-
 
 # %%
 @udf(
@@ -258,3 +258,4 @@ task_truck_sentiment.resume()
 task_truck_sentiment.drop()
 
 # %%
+# Set up Alerts
