@@ -1,12 +1,12 @@
 --!jinja
 USE ROLE {{demo_role}};
 
+-- use the database, it needs to be created already
+USE DATABASE {{demo_database}};
+
 /*--
 • database, schema and warehouse creation
 --*/
-
--- create {{demo_database}} database
-CREATE DATABASE IF NOT EXISTS  {{demo_database}};
 
 -- create raw_pos schema
 CREATE OR REPLACE SCHEMA {{demo_database}}.raw_pos;
