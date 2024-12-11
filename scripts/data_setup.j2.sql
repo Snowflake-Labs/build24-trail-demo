@@ -20,17 +20,17 @@ CREATE OR REPLACE SCHEMA {{demo_database}}.harmonized;
 -- create analytics schema
 CREATE OR REPLACE SCHEMA {{demo_database}}.analytics;
 
--- create tasty_ds_wh warehouse
-CREATE OR REPLACE WAREHOUSE tasty_ds_wh
-WAREHOUSE_SIZE = 'large'
-WAREHOUSE_TYPE = 'standard'
-AUTO_SUSPEND = 60
-AUTO_RESUME = TRUE
-INITIALLY_SUSPENDED = TRUE
-COMMENT = 'data science warehouse for tasty bytes';
+-- -- create tasty_ds_wh warehouse
+-- CREATE OR REPLACE WAREHOUSE tasty_ds_wh
+-- WAREHOUSE_SIZE = 'large'
+-- WAREHOUSE_TYPE = 'standard'
+-- AUTO_SUSPEND = 60
+-- AUTO_RESUME = TRUE
+-- INITIALLY_SUSPENDED = TRUE
+-- COMMENT = 'data science warehouse for tasty bytes';
 
 
-USE WAREHOUSE tasty_ds_wh;
+USE WAREHOUSE kamesh_snowpark_demo_wh;
 
 /*--
 • file format and stage creation
@@ -173,7 +173,7 @@ FROM @{{demo_database}}.public.s3load/raw_support/truck_reviews/;
 
 
 -- scale wh to medium
-ALTER WAREHOUSE tasty_ds_wh SET WAREHOUSE_SIZE = 'Medium';
+-- ALTER WAREHOUSE tasty_ds_wh SET WAREHOUSE_SIZE = 'Medium';
 
 -- setup completion note
 SELECT 'setup is now complete' AS note;
